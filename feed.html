@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Feed List</title>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<link rel="stylesheet" type="text/css" href="styles.css">
+   <script type="text/javascript">
+google.load("feeds", "1")
+</script>   
+</head>
+<body>
+<div class="head"><p class="title">List of Feeds </p></div>
+		  <div id="jsonFeed"></div>
+     <script type="text/javascript">
+var feedcontainer=document.getElementById("jsonFeed");
+var url="http://feeds.feedburner.com/tedtalks_video"
+//var feedlimit=10
+// Taking number of feed entries to be displayed on web page from user dynamically.
+var feedlimit = prompt('Enter how many feeds you want to see?');
+var output="<h2><center>Latest TedTalks:</center></h2><ul>"
+
+function initialize(){
+
+var feedpointer=new google.feeds.Feed(url);
+feedpointer.setNumEntries(feedlimit);
+feedpointer.load(displayfeed); 
+}
+
+function displayfeed(result){
+if (!result.error){
+var thefeeds=result.feed.entries;
+for (var i=0; i<thefeeds.length; i++)
+output+="<li><a href='" + thefeeds[i].link + "'>" + thefeeds[i].title + "</a></li>"
+output+="</ul>"
+console.log(output);
+feedcontainer.innerHTML=output;
+}
+
+else
+alert("Error fetching feeds!");
+}
+
+window.onload=function(){
+initialize();
+
+}
+
+</script>
+    
+	
+</body>
+</html> 

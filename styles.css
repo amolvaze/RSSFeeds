@@ -1,0 +1,49 @@
+body {
+		width			: auto;
+		height          : auto; 
+		position		: static;
+		z-index 		: 1;
+		background-color: #F5C1DF;
+	}
+	div.head {
+		background-color: /*#A410C2;*/ #F5C1DF;
+		height			: 60px;
+		width 			: auto;
+		position		: relative;
+		top 			: -8px;
+		right			: 15px;
+		left			: -1px;
+		z-index			: 2;
+	}
+	
+	p.title {
+		color			: #A410C2;
+		position		: absolute;
+		left			: 42%;
+		top		        : -18px;
+		z-index			: 3;
+		font-weight		: bold;
+		font-family		: verdana;
+		font-size		: 30px;
+	}
+	div#jsonFeed {
+		border			: medium none;
+		border-spacing	        : 0;
+		border: 1px dotted black;
+		opacity			:1;
+		background-color: #F5C1DF;
+		width:auto;
+		height:auto; 
+		
+	}
+	
+	
+	#jsonFeed a:visited {
+		color			:red;
+	}
+	
+	#jsonFeed a:hover {
+		color			:#C9147E;
+	}
+	
+	
