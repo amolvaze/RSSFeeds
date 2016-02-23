@@ -1,4 +1,4 @@
-Brief Read Me Documentation – RSS Feeds
+Brief Read Me Documentation – RSS Feeds - By Amol Vaze
 
 •	Project has two main files - Feed.html & Styles.css.
 
